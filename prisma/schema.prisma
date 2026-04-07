@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Docente {
+  id               Int      @id @default(autoincrement())
+  nombreCompleto   String
+  correo           String   @unique
+  institucion      String
+  createdAt        DateTime @default(now())
+}
